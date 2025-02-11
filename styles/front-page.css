@@ -1,0 +1,13 @@
+.next-riddle{
+  display: flex;
+  align-items: baseline;
+  margin: 2rem 0;
+}
+
+.riddle-options-list{
+  list-style-type: none;
+}
+
+.riddle-displayed{
+  max-width: 70%;
+}
