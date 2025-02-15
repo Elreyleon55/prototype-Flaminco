@@ -10,7 +10,6 @@ $riddlesAnswer = $_SESSION['riddle_answer'];
 $usersRiddleAnswer = $_SESSION['user_riddle_answer'];
 
 
-
 if ($riddlesAnswer === $usersRiddleAnswer) {
   $inPageMessagesAnswer[] = "User got the riddle right";
   $_SESSION['user_got_answer_right'] = true;
@@ -18,7 +17,7 @@ if ($riddlesAnswer === $usersRiddleAnswer) {
   exit();
 } else {
   $inPageMessagesAnswer[] = "User got the riddle wrong";
-  $_SESSION['user_got_answer_wrong'] = false;
+  $_SESSION['user_got_answer_wrong'] = true;
   header("location: riddle-page.php?cache=" . time());
   exit();
 }

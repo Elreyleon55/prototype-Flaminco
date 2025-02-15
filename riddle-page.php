@@ -1,5 +1,15 @@
 <?php
+require_once("dbinfo.php");
+$mysqli = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+
+if (mysqli_connect_errno() != 0) {
+  die("DB Connection Failed");
+} else {
+  echo "<p>Connection Complete</p>";
+}
 session_start();
+// session_destroy();
+
 
 
 //Setting global session to check for errors
@@ -22,14 +32,6 @@ if ($currentHour < 7) {
   echo "Good evening! Our bakery is closed, but we'll reopen tomorrow at 7:00 AM.";
 } else {
   echo "Welcome! Our bakery is open. How can we help you today?";
-  require_once("dbinfo.php");
-  $mysqli = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
-
-  if (mysqli_connect_errno() != 0) {
-    die("DB Connection Failed");
-  } else {
-    echo "<p>Connection Complete</p>";
-  }
 }
 
 //Getting total number of riddles to then set the index
@@ -71,11 +73,28 @@ echo "</pre>";
   <main>
     <?php
     if (
-      isset($_SESSION['user_got_answer_wrong']) && is_bool($_SESSION['user_got_answer_wrong'])
+      isset($_SESSION['user_got_answer_wrong'])
       ||
-      isset($_SESSION['user_got_answer_right']) && is_bool($_SESSION['user_got_answer_right'])
+      isset($_SESSION['user_got_answer_right'])
     ) {
-      echo "The sessions are set";
+      echo "The sessions are set now we will determine if the user lost or won";
+      if (isset($_SESSION['user_got_answer_right'])) {
+        echo "user got the answer correct";
+    ?>
+        <h2>Congratulations you have won the game</h2>
+        <p>The copoun will be valid starting tomorrow and before the next monday <br>Thank you for playing!</p>
+        <a href="">Navigate to our delisouse treats and view our inventory!</a>
+
+      <?php
+      } else if (isset($_SESSION['user_got_answer_wrong'])) {
+        echo "user got the answer wrong";
+      ?>
+        <h2>Sorry your aswer was not correct please try again next time</h2>
+        <a href="">Navigate to our delisouse treats and view our inventory!</a>
+      <?php
+      } else {
+        echo "error we were not able to determine if the user got the answer right or wrong";
+      }
     } else {
       $query = "SELECT * FROM list_riddles LIMIT 1 OFFSET " . $_SESSION['riddle_index'];
       $result = $mysqli->query($query);
@@ -84,7 +103,7 @@ echo "</pre>";
         $row = $result->fetch_assoc();
         $_SESSION['riddle_answer'] = $row['answer'];
         echo $_SESSION['riddle_answer'];
-    ?>
+      ?>
         <article class="riddle-displayed">
           <h1>Riddle Days</h1>
           <h2><?php echo $row['riddle'] ?></h2>
@@ -108,12 +127,17 @@ echo "</pre>";
               </li>
             </ul>
             <div>
+              <input type="text" placeholder="Gmail" type="gmail" id="gmail" name="users-gmail">
+              <p>Enter your email to recive your copoun</p>
+            </div>
+            <div>
               <input type="checkbox" id="news-letter" name="subscribe" value="yes">
               <label for="news-letter">Would you like to recive new updates on Uprisings products & events</label>
             </div>
             <div>
               <input type="submit" value="Submit">
             </div>
+
           </form>
         </article>
     <?php
