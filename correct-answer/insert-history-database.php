@@ -3,6 +3,9 @@
 <!-- Add a Copoun and go from the last one -->
 
 <?php
+
+use PgSql\Connection;
+
 session_start();
 require_once('../dbinfo.php');
 $mySqli = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
@@ -13,36 +16,22 @@ if (mysqli_connect_errno() != 0) {
   echo "Connection Successful";
 }
 
-$newCouponCode;
+$usersEmail = $_SESSION["users_email"];
 
-generateCouponCode($mySqli);
+$query = $mySqli->prepare("SELECT email FROM history_of_customers WHERE email = ?");
+$query->bind_param('s', $usersEmail);
+$query->execute();
+$query->store_result();
 
-function generateCouponCode($mySqli)
-{
-
-  $query = "SELECT Coupon_code FROM history_of_customers ORDER BY id DESC LIMIT 1";
-  $result = $mySqli->query($query);
-  if ($result) {
-    $lastCouponCode = $result->fetch_column();
-    if (!$lastCouponCode) {
-      $lastCouponCode = "COOKIES_001";
-    } else {
-      preg_match('/\d+$/', $lastCouponCode, $match);
-      $lastNumber = (int)$match[0];
-      $newNumber = $lastNumber + 1;
-      $newCouponCode = sprintf("COOKIES_%03d", $newNumber);
-    }
-  }
-  addUserToDataBase($mySqli, $newCouponCode);
-}
-
-
-function addUserToDataBase($mySqli, $newCouponCode)
-{
+if ($query->num_rows > 0) {
+  header("location: insert-winners-database.php");
+  exit;
+} else {
+  echo "<p>Can continue and add user to history of users databse</p>";
   $todaysDate = date("Y-m-d");
   $usersEmail = $_SESSION["users_email"];
   $newsLetterDecision = $_SESSION['user-wants-to-subscribe'];
-  $query = "INSERT INTO history_of_customers (email, date_registration, notify_other_events, Coupon_code) VALUES ('$usersEmail', '$todaysDate', '$newsLetterDecision', '$newCouponCode')";
+  $query = "INSERT INTO history_of_customers (email, date_registration, notify_other_events) VALUES ('$usersEmail', '$todaysDate', '$newsLetterDecision')";
   $mySqli->query($query);
   $affectedRows = $mySqli->affected_rows;
   if ($affectedRows > 0) {
@@ -50,9 +39,7 @@ function addUserToDataBase($mySqli, $newCouponCode)
   } else {
     echo "<p>Nothing was inserted</p>";
   }
-  $_SESSION["copoun_code"] = $newCouponCode;
 }
-
 
 header("location: insert-winners-database.php");
 exit();

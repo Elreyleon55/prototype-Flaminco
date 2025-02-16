@@ -26,7 +26,7 @@ $startingTommorow = (clone $todaysDate)->modify('+1 day');
 $sevenDaysLaterFormatted = $sevenDaysLater->format("Y-m-d");
 $startingTommorowFormatted = $startingTommorow->format("Y-m-d");
 
-$winnersCoupon = $_SESSION["copoun_code"];
+$winnersCoupon;
 
 $usersEmail = $_SESSION["users_email"];
 
@@ -38,12 +38,13 @@ $query->store_result();
 if ($query->num_rows > 0) {
   $globalErrors[] = "Sorry this email has already played today please try a diffrent one";
   $_SESSION['my-erros'] = $globalErrors;
-  unset($_SESSION["copoun_code"]);
   unset($_SESSION['user_got_answer_right']);
   unset($_SESSION['user_got_answer_wrong']);
   header("location: ../riddle-page.php");
   exit();
 } else {
+  generateCouponCode($mySqli);
+  $winnersCoupon = $_SESSION["copoun_code"];
   $query = $mySqli->prepare("INSERT INTO intended_option_winners (coupon, email, date_won, valid_from, valid_to) VALUES (?, ?, ?, ?, ?)");
   $query->bind_param('sssss', $winnersCoupon, $usersEmail, $todaysDateS, $startingTommorowFormatted, $sevenDaysLaterFormatted);
   $query->execute();
@@ -52,6 +53,24 @@ if ($query->num_rows > 0) {
     echo "<p>$affectedRows records were inserted </p>";
   } else {
     echo "<p>Nothing was inserted</p>";
+  }
+}
+
+function generateCouponCode($mySqli)
+{
+  $query = "SELECT coupon FROM intended_option_winners ORDER BY id DESC LIMIT 1";
+  $result = $mySqli->query($query);
+  if ($result) {
+    $lastCouponCode = $result->fetch_column();
+    if (!$lastCouponCode) {
+      $lastCouponCode = "COOKIES_001";
+    } else {
+      preg_match('/\d+$/', $lastCouponCode, $match);
+      $lastNumber = (int)$match[0];
+      $newNumber = $lastNumber + 1;
+      $winnersCoupon = sprintf("COOKIES_%03d", $newNumber);
+      $_SESSION["copoun_code"] = $winnersCoupon;
+    }
   }
 }
 
