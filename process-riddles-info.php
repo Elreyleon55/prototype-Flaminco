@@ -44,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   //checks if the checkbox exist and if it was clicked sending back the value "yes";
   if (isset($_POST['subscribe']) && $_POST['subscribe'] === 'yes') {
     $inPageMessages[] = "User wants to sign up to the news letter";
-    $_SESSION['user-wants-to-subscribe'] = true;
+    $_SESSION['user-wants-to-subscribe'] = 1;
   } else {
     $inPageMessages[] = "User does not want to sign up for newsletter";
   }
@@ -75,7 +75,7 @@ if (count($globalErrors) > 0) {
   if ($riddlesAnswer === $usersRiddleAnswer) {
     $inPageMessages = "User got the riddle right";
     $_SESSION['user_got_answer_right'] = true;
-    header("location: ./correct-answer/generate-copoun.php");
+    header("location: ./correct-answer/insert-history-database.php");
     exit();
   } else {
     $inPageMessages[] = "User got the riddle wrong";

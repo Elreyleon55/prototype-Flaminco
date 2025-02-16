@@ -3,6 +3,7 @@
 <!-- Add a Copoun and go from the last one -->
 
 <?php
+session_start();
 require_once('../dbinfo.php');
 $mySqli = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
@@ -14,8 +15,11 @@ if (mysqli_connect_errno() != 0) {
 
 $newCouponCode;
 
+generateCouponCode($mySqli);
+
 function generateCouponCode($mySqli)
 {
+
   $query = "SELECT Coupon_code FROM history_of_customers ORDER BY id DESC LIMIT 1";
   $result = $mySqli->query($query);
   if ($result) {
@@ -29,10 +33,8 @@ function generateCouponCode($mySqli)
       $newCouponCode = sprintf("COOKIES_%03d", $newNumber);
     }
   }
-  echo "New Coupon Code" . $newCouponCode;
+  addUserToDataBase($mySqli, $newCouponCode);
 }
-
-generateCouponCode($mySqli);
 
 
 function addUserToDataBase($mySqli, $newCouponCode)
@@ -40,7 +42,7 @@ function addUserToDataBase($mySqli, $newCouponCode)
   $todaysDate = date("Y-m-d");
   $usersEmail = $_SESSION["users_email"];
   $newsLetterDecision = $_SESSION['user-wants-to-subscribe'];
-  $query = "INSERT INTO history_of_customers (gmail, date_registration, notify_other_events, Coupon_code) VALUES ('$usersEmail', '$todaysDate', '$newsLetterDecision', '$newCouponCode')";
+  $query = "INSERT INTO history_of_customers (email, date_registration, notify_other_events, Coupon_code) VALUES ('$usersEmail', '$todaysDate', '$newsLetterDecision', '$newCouponCode')";
   $mySqli->query($query);
   $affectedRows = $mySqli->affected_rows;
   if ($affectedRows > 0) {
@@ -48,9 +50,14 @@ function addUserToDataBase($mySqli, $newCouponCode)
   } else {
     echo "<p>Nothing was inserted</p>";
   }
+  $_SESSION["copoun_code"] = $newCouponCode;
 }
 
-addUserToDataBase($mySqli, $newCouponCode);
+
+header("location: insert-winners-database.php");
+exit();
+
+
 
 
 
