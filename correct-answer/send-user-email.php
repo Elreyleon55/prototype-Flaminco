@@ -2,14 +2,24 @@
 <!-- delete all unessecary or uncovinent SESSIONS -->
 <!-- Loop back to the riddle page -->
 <?php
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+require("../vendor/autoload.php");
+require("../config.php");
+
+
+$config = require '../config.php';
+
 session_start();
 
 $usersEmail = $_SESSION["users_email"];
 $usersCoupon = $_SESSION["copoun_code"];
 
-
 $validFrom = $_SESSION["VALID_FROM"];
 $validTo = $_SESSION["VALID_TO"];
+
 
 if ($usersEmail) {
 
@@ -33,20 +43,36 @@ if ($usersEmail) {
 
   $emailBody = str_replace(array_keys($data), array_values($data), $emailTemplate);
 
-  $to = $usersEmail;
-  $subject = "Uprising Coupon Code";
-  $headers = [
-    "MIME-Version: 1.0",
-    "Content-type: text/html; charset=UTF-8",
-    "From: Your Company <benjamin.4179@gmail.com>",
-    "Reply-To: benjamin.4179@gmail.com"
-  ];
+  $mail = new PHPMailer(true);
 
-  $header = implode("\r\n", $headers);
-  if (mail($to, $subject, $emailBody, $header)) {
-    echo "Email Send succesfully";
-  } else {
-    echo "<p>Error accured</p>";
+  try {
+    // Server settings
+    $mail->isSMTP(); // Use SMTP
+    $mail->Host = 'smtp.gmail.com'; // SMTP server (e.g., Gmail)
+    $mail->SMTPAuth = true; // Enable SMTP authentication
+    $mail->Username = $config['email_username']; // SMTP username (your email)
+    $mail->Password = $config['email_password']; // SMTP password (or app password)
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS; // Enable TLS encryption
+    $mail->Port = 587; // TCP port (587 for TLS)
+
+    // Recipients
+    $mail->setFrom($config['email_username'], 'Cookie Monster'); // Sender
+    $mail->addAddress($usersEmail, 'Recipient Name'); // Recipient
+
+    // Content
+    $mail->isHTML(true); // Set email format to HTML
+    $mail->Subject = 'Congratulations Uprising Cookies';
+    $mail->Body = $emailBody;
+    $mail->AltBody = 'Hello! This is a test email sent using PHPMailer.'; // Plain text for non-HTML clients
+
+    // Send the email
+    if ($mail->send()) {
+      echo 'Email sent successfully!';
+      header("location: ../riddle-page.php");
+      exit();
+    }
+  } catch (Exception $e) {
+    echo "Failed to send email. Error: {$mail->ErrorInfo}";
   }
 } else {
   echo "<p>Sorry No email was found</p>";
