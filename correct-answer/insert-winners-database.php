@@ -26,6 +26,9 @@ $startingTommorow = (clone $todaysDate)->modify('+1 day');
 $sevenDaysLaterFormatted = $sevenDaysLater->format("Y-m-d");
 $startingTommorowFormatted = $startingTommorow->format("Y-m-d");
 
+$_SESSION["VALID_FROM"] = $startingTommorowFormatted;
+$_SESSION["VALID_TO"] = $sevenDaysLaterFormatted;
+
 $winnersCoupon;
 
 $usersEmail = $_SESSION["users_email"];
@@ -51,6 +54,8 @@ if ($query->num_rows > 0) {
   $affectedRows = $mySqli->affected_rows;
   if ($affectedRows > 0) {
     echo "<p>$affectedRows records were inserted </p>";
+    header("location: send-user-email.php");
+    exit();
   } else {
     echo "<p>Nothing was inserted</p>";
   }
