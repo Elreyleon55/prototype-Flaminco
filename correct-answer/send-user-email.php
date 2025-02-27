@@ -14,6 +14,8 @@ $config = require '../config.php';
 
 session_start();
 
+$_COOKIE['game_played'] = 1;
+
 $usersEmail = $_SESSION["users_email"];
 $usersCoupon = $_SESSION["copoun_code"];
 

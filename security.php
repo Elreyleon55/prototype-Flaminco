@@ -3,6 +3,9 @@ session_start();
 session_regenerate_id(true);
 $inpage_messages = [];
 
+//Setting Cookies Code 
+//setcookie('game_played', '1', time() + (15), "/");
+
 
 if (isset($_COOKIE['game_played'])) {
 

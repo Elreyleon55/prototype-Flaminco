@@ -8,8 +8,6 @@ if (mysqli_connect_errno() != 0) {
   echo "<p>Connection Complete</p>";
 }
 session_start();
-// session_destroy();
-
 
 
 //Setting global session to check for errors
@@ -51,10 +49,8 @@ if ($result) {
 if (!isset($_SESSION['riddle_index'])) {
   $_SESSION['riddle_index'] = 0; // Start from the first riddle
 }
-echo '<p>' . $_SESSION['riddle_index'] . '</p>';
-echo "<pre>";
-print_r($_SESSION);
-echo "</pre>";
+
+
 
 ?>
 
@@ -90,7 +86,7 @@ echo "</pre>";
         echo "user got the answer wrong";
       ?>
         <h2>Sorry your aswer was not correct please try again next time</h2>
-        <a href="">Navigate to our delisouse treats and view our inventory!</a>
+        <a href="https://uprisingbreads.com/our-products/">Navigate to our delisouse treats and view our inventory!</a>
       <?php
       } else {
         echo "error we were not able to determine if the user got the answer right or wrong";
@@ -104,7 +100,7 @@ echo "</pre>";
         $_SESSION['riddle_answer'] = $row['answer'];
         echo $_SESSION['riddle_answer'];
       ?>
-        <article class="riddle-displayed">
+        <div class="riddle-displayed">
           <h1>Riddle Days</h1>
           <h2><?php echo $row['riddle'] ?></h2>
           <form action="process-riddles-info.php" method="POST">
@@ -134,12 +130,12 @@ echo "</pre>";
               <input type="checkbox" id="news-letter" name="subscribe" value="yes">
               <label for="news-letter">Would you like to recive new updates on Uprisings products & events</label>
             </div>
-            <div>
+            <div class="submit-button">
               <input type="submit" value="Submit">
             </div>
 
           </form>
-        </article>
+        </div>
     <?php
       }
       //closing dataBase Connection
@@ -150,9 +146,21 @@ echo "</pre>";
     <section class="control-buttons">
       <div class="next-riddle">
         <form method="POST" action="next-riddle.php">
-          <button type="submit">Next Riddle Button</button>
+          <button type="submit">Next Riddle</button>
         </form>
         <p> --- The button is for simplification / riddles will be generated according to time and day</p>
+      </div>
+      <div class="users-want-notifications">
+        <form method="POST" action="user-wants-notifications.php">
+          <button type="submit">Get Users that Want to be Notified</button>
+        </form>
+        <p>--- The button is for simplification / list of users can be send according to desire</p>
+      </div>
+      <div class="users-want-notifications">
+        <form method="POST" action="list-of-winners.php">
+          <button type="submit">Get end of the day Winners</button>
+        </form>
+        <p> --- The button is for simplification / list of users can be send according to time and day</p>
       </div>
     </section>
     <?php

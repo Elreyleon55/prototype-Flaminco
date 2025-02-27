@@ -28,7 +28,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       $globalErrors[] = "Sorry you must pick a option and try to solve the riddle please try again";
     } else {
       $inPageMessages[] = "All required fields where submitted";
-      setcookie('game_played', '1', time() + (15), "/");
     }
   }
   //saves the user answer to then analize if he got it right

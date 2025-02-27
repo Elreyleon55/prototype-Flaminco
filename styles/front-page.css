@@ -1,7 +1,41 @@
+/* Typography */
+
+
+
+
+
+/* General */
+button{
+  padding: 0.5rem;
+}
+input{
+  padding: 0.5rem;
+}
+
+
+
+/* riddle section */
+.riddle-displayed{
+  text-align: center;
+}
+
+.submit-button{
+  margin-top: 1rem;
+  padding: 0.5rem;
+}
+
+
+
+
+/* control button section */
+.control-buttons{
+  margin-top: 3rem;
+}
+
 .next-riddle{
   display: flex;
   align-items: baseline;
-  margin: 2rem 0;
+
 }
 
 .riddle-options-list{
@@ -10,4 +44,10 @@
 
 .riddle-displayed{
   max-width: 70%;
+}
+
+
+.users-want-notifications{
+  display: flex;
+  align-items: baseline;
 }
