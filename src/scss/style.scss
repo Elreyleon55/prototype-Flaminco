@@ -1,0 +1,10 @@
+// src/scss/styles.scss
+@import "_header.scss";
+
+
+$primary-color: #3498db;
+
+body {
+  background-color: $primary-color;
+  font-family: 'Courier New', Courier, monospace;
+}

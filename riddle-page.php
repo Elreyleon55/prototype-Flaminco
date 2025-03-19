@@ -8,6 +8,7 @@ if (mysqli_connect_errno() != 0) {
   echo "<p>Connection Complete</p>";
 }
 session_start();
+// session_destroy();
 
 
 //Setting global session to check for errors
