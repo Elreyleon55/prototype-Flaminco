@@ -1,3 +1,19 @@
-.header{
-  color: red;
+header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: $headerDarker;
+  h2{
+    font-size: 2rem;
+  }
+  .header-menu{
+    div{
+      display: flex;
+      gap: 1rem;
+    }
+    p{
+      font-size: 1.3rem;
+    }
+  }
 }

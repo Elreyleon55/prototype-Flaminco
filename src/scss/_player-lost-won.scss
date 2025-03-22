@@ -1,0 +1,17 @@
+.player-lost-game{
+  h2{
+    font-size: 1.5rem;
+
+  }
+
+}
+.player-won-game{
+  h2{
+    font-size: 1.5rem;
+
+  }
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 1rem;
+}

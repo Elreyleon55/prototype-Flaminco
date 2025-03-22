@@ -1,0 +1,52 @@
+body{
+background-color: $bodyBackGroundColor;
+}
+body,
+h1, h2, h3, h4, h5, h6,
+p, ul, ol, li,
+figure, figcaption, blockquote,
+dl, dd {
+  margin: 0;
+  padding: 0;
+}
+a{
+  color: $paragraphColour;
+}
+main{
+  background: linear-gradient(to bottom, $bodyBackGroundColor, $backgroundSectionTwo);
+  margin-bottom: 5rem;
+}
+body{
+    background-color: $backgroundSectionTwo;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5{
+    font-family: $headerFont;
+}
+
+p{
+  font-family: $paragraphText;
+}
+
+li{
+  text-decoration: none;
+  list-style-type: none;
+}
+
+button{
+  padding: 0.7rem 0.5rem;
+}

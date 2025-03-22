@@ -1,8 +1,204 @@
-.header {
-  color: red;
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #bebcbc;
+}
+header h2 {
+  font-size: 2rem;
+}
+header .header-menu div {
+  display: flex;
+  gap: 1rem;
+}
+header .header-menu p {
+  font-size: 1.3rem;
 }
 
 body {
-  background-color: #3498db;
-  font-family: "Courier New", Courier, monospace;
+  background-color: #D9D9D9;
+}
+
+body,
+h1, h2, h3, h4, h5, h6,
+p, ul, ol, li,
+figure, figcaption, blockquote,
+dl, dd {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: #D9D9D9;
+}
+
+main {
+  background: linear-gradient(to bottom, #D9D9D9, #593F72);
+  margin-bottom: 5rem;
+}
+
+body {
+  background-color: #593F72;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Playfair Display", serif;
+}
+
+p {
+  font-family: "Inter", sans-serif;
+}
+
+li {
+  text-decoration: none;
+  list-style-type: none;
+}
+
+button {
+  padding: 0.7rem 0.5rem;
+}
+
+.intro-section-one {
+  background-image: url("../../media/backdrop-coffe.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 95vh;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  margin-bottom: 5rem;
+  display: flex;
+}
+.intro-section-one p {
+  padding: 2rem 3rem;
+  font-size: 1.5rem;
+}
+.intro-section-one .intro-text-box-one {
+  display: inline;
+  width: 50vw;
+  border-radius: 1rem;
+  transform: translateX(-2rem);
+}
+.intro-section-one .intro-text-box-one p {
+  border-radius: 1rem;
+  background-color: rgba(30, 30, 30, 0.5);
+  color: white;
+}
+.intro-section-one .intro-text-box-two {
+  display: inline;
+  width: 60vw;
+  transform: translateX(-2rem);
+}
+.intro-section-one .intro-text-box-two p {
+  border-radius: 1rem;
+  background-color: rgba(30, 30, 30, 0.5);
+  color: white;
+}
+
+.image-of-coffe-cup {
+  position: relative;
+  height: 19rem;
+  background-color: #593F72;
+  border-radius: 1rem;
+}
+.image-of-coffe-cup svg {
+  width: 8%;
+  transform: translate(10rem, 6rem);
+}
+
+.coffe-mug {
+  width: 23rem;
+  position: absolute;
+  top: -59%;
+  right: 1rem;
+  border-radius: 1rem;
+}
+
+.riddle-section {
+  text-align: center;
+  padding: 4rem;
+  margin: 5rem;
+  border: solid 2px #D9D9D9;
+  border-radius: 1rem;
+  gap: 4rem;
+  background-color: #593F72;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+}
+.riddle-section h1, .riddle-section p, .riddle-section h2, .riddle-section li, .riddle-section label {
+  color: #D9D9D9;
+}
+.riddle-section h1 {
+  font-size: 2rem;
+}
+.riddle-section form {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+.riddle-section form ul li {
+  font-size: 1.5rem;
+}
+.riddle-section form p, .riddle-section form label, .riddle-section form input {
+  font-size: 1.5rem;
+}
+
+footer .my-footer-div {
+  background-color: #593F72;
+  width: 100%;
+  height: 100%;
+  margin: 4rem;
+}
+
+.control-buttons {
+  text-align: center;
+}
+.control-buttons input, .control-buttons label, .control-buttons p {
+  color: #D9D9D9;
+}
+.control-buttons .control-buttons {
+  padding: 0 5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.control-buttons .control-buttons p {
+  font-size: 1.2rem;
+}
+.control-buttons .control-buttons form {
+  margin-bottom: 0.5rem;
+}
+.control-buttons .control-buttons button {
+  font-size: 1rem;
+}
+
+.player-lost-game h2 {
+  font-size: 1.5rem;
+}
+
+.player-won-game {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 1rem;
+}
+.player-won-game h2 {
+  font-size: 1.5rem;
 }

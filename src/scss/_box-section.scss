@@ -1,0 +1,37 @@
+.intro-section-one{
+background-image: url('../../media/backdrop-coffe.jpg');
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+height: 95vh;
+display: flex;
+justify-content: space-around;
+flex-direction: column;
+margin-bottom: 5rem;
+p{
+  padding: 2rem 3rem;
+    font-size: 1.5rem;
+}
+display: flex;
+.intro-text-box-one{
+  display: inline;
+  width: 50vw;
+  border-radius: 1rem;
+  transform: translateX(-2rem);
+  p{
+    border-radius: 1rem;
+    background-color: rgba(30, 30, 30, 0.5);
+    color: white;
+  }
+}
+.intro-text-box-two{
+  display: inline;
+  width: 60vw;
+  transform: translateX(-2rem);
+  p{
+    border-radius: 1rem;
+    background-color: rgba(30, 30, 30, 0.5);
+    color: white;
+  }
+}
+}

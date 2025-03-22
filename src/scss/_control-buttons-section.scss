@@ -1,0 +1,21 @@
+.control-buttons{
+  text-align: center;
+  input,label, p{
+    color: $paragraphColour;
+  }
+  .control-buttons{
+    padding: 0 5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    p{
+      font-size: 1.2rem;
+    }
+    form{
+      margin-bottom: 0.5rem;
+    }
+    button{
+      font-size: 1rem;
+    }
+  }
+}

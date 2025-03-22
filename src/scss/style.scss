@@ -1,11 +1,10 @@
 // src/scss/styles.scss
-@import "_colors.scss";
+@import "_abstract.scss";
 @import "_header.scss";
-
-
-$primary-color: #3498db;
-
-body {
-  background-color: $primary-color;
-  font-family: 'Courier New', Courier, monospace;
-}
+@import "_base.scss";
+@import "_box-section";
+@import "_coffe-image-section.scss";
+@import "_riddle-section.scss";
+@import "_footer-styles.scss";
+@import "_control-buttons-section.scss";
+@import "_player-lost-won.scss";

@@ -1,0 +1,35 @@
+.riddle-section{
+  text-align: center;
+  padding: 4rem;
+  margin: 5rem;
+  border: solid 2px $paragraphColour;
+  border-radius: 1rem;
+  gap: 4rem;
+  background-color: $backgroundSectionTwo;
+  h1, p, h2, li, label{
+    color: $paragraphColour;
+  }
+  h1{
+    font-size: 2rem;
+  }
+  
+  form{
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    ul{
+      li{
+        font-size: 1.5rem;
+      }
+      
+    }
+    p, label, input{
+      font-size: 1.5rem;
+    }
+   
+  }
+
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+}
