@@ -1,20 +1,26 @@
 .image-of-coffe-cup{
   position: relative;
-  height: 19rem;
-  background-image: url('../../media/backdrop-coffe-beans.jpg');
+  height: 60vh;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   svg{
-    width: 8%;
-    transform: translate(10rem, 6rem);
+    width: 37%;
+    transform: translate(15%, 50%);
+  }
+  .container-coffe-mug{
+    width: 33rem;
+    position: absolute;
+    top: -27%;
+    right: 2.5rem;
+    border-radius: 1rem;
+    height: 33rem;
+    background-image: url('../../media/coffe-image-flaminco.jpg');
+    background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
   }
 }
 
-.coffe-mug{
-  width: 23rem;
-  position: absolute;
-  top: -59%;
-  right: 1rem;
-  border-radius: 1rem;
-}
+

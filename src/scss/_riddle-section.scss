@@ -1,22 +1,41 @@
 .riddle-section{
   text-align: center;
-  padding: 4rem;
-  margin: 5rem;
-  border: solid 2px $paragraphColour;
-  border-radius: 1rem;
-  gap: 4rem;
-  background-color: $backgroundSectionTwo;
+  background-image: url(../../media/Flaminco-wall-paper.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+
+  .inside-riddle-section{
+    padding: 4rem;
+    margin: 5% 12%;
+    background-color: rgba(0, 0, 0, 0.65);
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    border-radius: 1rem;
+  }
+  
   h1, p, h2, li, label{
     color: $paragraphColour;
   }
   h1{
     font-size: 2rem;
   }
-  
   form{
     display: flex;
     flex-direction: column;
     gap: 3rem;
+    .submit-button{
+      input:hover{
+        cursor: pointer;
+      }
+    }
+    .riddle-options-list{
+      input:hover{
+        cursor: pointer;
+      }
+    }
     ul{
       li{
         font-size: 1.5rem;

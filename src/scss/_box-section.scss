@@ -1,5 +1,5 @@
 .intro-section-one{
-background-image: url('../../media/backdrop-coffe.jpg');
+background-image: url('../../media/Flaminco-background.jpg');
 background-size: cover;
 background-position: center;
 background-repeat: no-repeat;
@@ -8,30 +8,32 @@ display: flex;
 justify-content: space-around;
 flex-direction: column;
 margin-bottom: 5rem;
+border-bottom: 0.2rem solid $paragraphColour;
 p{
-  padding: 2rem 3rem;
-    font-size: 1.5rem;
+  padding: 0 2.5rem;
+  font-size: 3.2rem;
+  font-family: $introText;
 }
 display: flex;
-.intro-text-box-one{
-  display: inline;
-  width: 50vw;
-  border-radius: 1rem;
-  transform: translateX(-2rem);
-  p{
-    border-radius: 1rem;
-    background-color: rgba(30, 30, 30, 0.5);
-    color: white;
+.intro-background-image{
+  // background-color: rgba(30, 30, 30, 0.5);
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 50%;
+  height: 100%;
+  display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+  .intro-text-box-one{
+    display: inline;
+    p{
+      color: white;
+    }
   }
-}
-.intro-text-box-two{
-  display: inline;
-  width: 60vw;
-  transform: translateX(-2rem);
-  p{
-    border-radius: 1rem;
-    background-color: rgba(30, 30, 30, 0.5);
-    color: white;
+  .intro-text-box-two{
+    display: inline;
+    p{
+      color: white;
+    }
   }
 }
 }

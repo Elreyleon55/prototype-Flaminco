@@ -2,7 +2,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
+  padding: 1rem 2.5rem;
   background-color: rgba(0, 0, 0, 0.5);
 }
 header h2 {
@@ -63,7 +63,7 @@ h5 {
 }
 
 p {
-  font-family: "Inter", sans-serif;
+  font-family: "Roboto Serif", serif;
 }
 
 li {
@@ -76,7 +76,7 @@ button {
 }
 
 .intro-section-one {
-  background-image: url("../../media/backdrop-coffe.jpg");
+  background-image: url("../../media/Flaminco-background.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -85,66 +85,78 @@ button {
   justify-content: space-around;
   flex-direction: column;
   margin-bottom: 5rem;
+  border-bottom: 0.2rem solid #D9D9D9;
   display: flex;
 }
 .intro-section-one p {
-  padding: 2rem 3rem;
-  font-size: 1.5rem;
+  padding: 0 2.5rem;
+  font-size: 3.2rem;
+  font-family: "Roboto Serif", serif;
 }
-.intro-section-one .intro-text-box-one {
+.intro-section-one .intro-background-image {
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.intro-section-one .intro-background-image .intro-text-box-one {
   display: inline;
-  width: 50vw;
-  border-radius: 1rem;
-  transform: translateX(-2rem);
 }
-.intro-section-one .intro-text-box-one p {
-  border-radius: 1rem;
-  background-color: rgba(30, 30, 30, 0.5);
+.intro-section-one .intro-background-image .intro-text-box-one p {
   color: white;
 }
-.intro-section-one .intro-text-box-two {
+.intro-section-one .intro-background-image .intro-text-box-two {
   display: inline;
-  width: 60vw;
-  transform: translateX(-2rem);
 }
-.intro-section-one .intro-text-box-two p {
-  border-radius: 1rem;
-  background-color: rgba(30, 30, 30, 0.5);
+.intro-section-one .intro-background-image .intro-text-box-two p {
   color: white;
 }
 
 .image-of-coffe-cup {
   position: relative;
-  height: 19rem;
-  background-image: url("../../media/backdrop-coffe-beans.jpg");
+  height: 60vh;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 .image-of-coffe-cup svg {
-  width: 8%;
-  transform: translate(10rem, 6rem);
+  width: 37%;
+  transform: translate(15%, 50%);
 }
-
-.coffe-mug {
-  width: 23rem;
+.image-of-coffe-cup .container-coffe-mug {
+  width: 33rem;
   position: absolute;
-  top: -59%;
-  right: 1rem;
+  top: -27%;
+  right: 2.5rem;
   border-radius: 1rem;
+  height: 33rem;
+  background-image: url("../../media/coffe-image-flaminco.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .riddle-section {
   text-align: center;
-  padding: 4rem;
-  margin: 5rem;
-  border: solid 2px #D9D9D9;
-  border-radius: 1rem;
-  gap: 4rem;
-  background-color: #593F72;
+  background-image: url(../../media/Flaminco-wall-paper.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
   display: flex;
   justify-content: space-around;
   flex-direction: column;
+}
+.riddle-section .inside-riddle-section {
+  padding: 4rem;
+  margin: 5% 12%;
+  background-color: rgba(0, 0, 0, 0.65);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  border-radius: 1rem;
 }
 .riddle-section h1, .riddle-section p, .riddle-section h2, .riddle-section li, .riddle-section label {
   color: #D9D9D9;
@@ -156,6 +168,12 @@ button {
   display: flex;
   flex-direction: column;
   gap: 3rem;
+}
+.riddle-section form .submit-button input:hover {
+  cursor: pointer;
+}
+.riddle-section form .riddle-options-list input:hover {
+  cursor: pointer;
 }
 .riddle-section form ul li {
   font-size: 1.5rem;
@@ -173,6 +191,7 @@ footer .my-footer-div {
 
 .control-buttons {
   text-align: center;
+  margin-top: 2rem;
 }
 .control-buttons input, .control-buttons label, .control-buttons p {
   color: #D9D9D9;
