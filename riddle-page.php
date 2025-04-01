@@ -90,10 +90,6 @@ if (!isset($_SESSION['riddle_index'])) {
       </div>
     </section>
     <section class="image-of-coffe-cup">
-      <svg width="112" height="223" viewBox="0 0 112 223" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M63.5 8C63.5 3.85786 60.1421 0.5 56 0.5C51.8579 0.5 48.5 3.85786 48.5 8L63.5 8ZM50.6967 220.303C53.6256 223.232 58.3744 223.232 61.3033 220.303L109.033 172.574C111.962 169.645 111.962 164.896 109.033 161.967C106.104 159.038 101.355 159.038 98.4264 161.967L56 204.393L13.5736 161.967C10.6447 159.038 5.89592 159.038 2.96699 161.967C0.0380592 164.896 0.0380592 169.645 2.96699 172.574L50.6967 220.303ZM48.5 8L48.5 215H63.5L63.5 8L48.5 8Z" fill="white" />
-      </svg>
-
       <img class="coffe-mug" src="media/coffe-mug.jpg" alt="Photo of coffe mug">
     </section>
     <section class="riddle-section">

@@ -3,10 +3,11 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
-  background-color: #bebcbc;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 header h2 {
   font-size: 2rem;
+  color: #D9D9D9;
 }
 header .header-menu div {
   display: flex;
@@ -14,6 +15,7 @@ header .header-menu div {
 }
 header .header-menu p {
   font-size: 1.3rem;
+  color: #D9D9D9;
 }
 
 body {
@@ -34,12 +36,12 @@ a {
 }
 
 main {
-  background: linear-gradient(to bottom, #D9D9D9, #593F72);
+  background-color: #050703;
   margin-bottom: 5rem;
 }
 
 body {
-  background-color: #593F72;
+  background-color: #050703;
 }
 
 html {
@@ -114,8 +116,10 @@ button {
 .image-of-coffe-cup {
   position: relative;
   height: 19rem;
-  background-color: #593F72;
-  border-radius: 1rem;
+  background-image: url("../../media/backdrop-coffe-beans.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 .image-of-coffe-cup svg {
   width: 8%;

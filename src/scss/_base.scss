@@ -13,11 +13,11 @@ a{
   color: $paragraphColour;
 }
 main{
-  background: linear-gradient(to bottom, $bodyBackGroundColor, $backgroundSectionTwo);
+  background-color: $blackBackGroundColor;
   margin-bottom: 5rem;
 }
 body{
-    background-color: $backgroundSectionTwo;
+    background-color: $blackBackGroundColor;
 }
 
 html {
