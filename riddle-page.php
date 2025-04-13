@@ -73,11 +73,9 @@ if (!isset($_SESSION['riddle_index'])) {
     <section class="intro-section-one">
       <div class="intro-background-image">
         <div class="intro-text-box-one">
-          <p>Welcome To Riddle Mondays</p>
+          <p>WIN A FREE COFFEE, BY SOLVING THE MONDAY RIDDLE</p>
         </div>
-        <div class="intro-text-box-two">
-          <p>Get the riddle Correct Win a free Coffe!</p>
-        </div>
+        <!--  -->
       </div>
     </section>
     <section class="image-of-coffe-cup">
@@ -127,9 +125,9 @@ if (!isset($_SESSION['riddle_index'])) {
         ?>
             <section class="player-won-game">
               <h2>Congratulations you have won the game</h2>
-              <p>The copoun will send to your email and will be valid starting tomorrow and before the next monday <br>Thank you for playing!</p>
+              <p>The coupon will send to your email and will be valid for six days<br>Thank you for playing!</p>
 
-              <a href="">Navigate to our delisouse treats and view our inventory!</a>
+              <a href="">Navigate to our delicious treats and view our inventory!</a>
             </section>
 
           <?php
@@ -179,12 +177,12 @@ if (!isset($_SESSION['riddle_index'])) {
                   </ul>
                 </div>
                 <div>
-                  <input type="text" placeholder="Gmail" type="gmail" id="gmail" name="users-gmail">
-                  <p>Enter your email to recive your price</p>
+                  <p>Enter your email to receive your prize</p>
+                  <input type="text" placeholder="Email" type="gmail" id="gmail" name="users-gmail">
                 </div>
                 <div>
                   <input type="checkbox" id="news-letter" name="subscribe" value="yes">
-                  <label for="news-letter">Would you like to recive new updates on Uprisings products & events</label>
+                  <label for="news-letter">I would like to receive updates on new products & events</label>
                 </div>
                 <div class="submit-button">
                   <input type="submit" value="Submit">
@@ -207,15 +205,15 @@ if (!isset($_SESSION['riddle_index'])) {
         </div>
         <div class="users-want-notifications">
           <form method="POST" action="user-wants-notifications.php">
-            <button type="submit">Get Users that Want to be Notified</button>
+            <button type="submit">Get Users That Want to be Notified</button>
           </form>
-          <p>--- The button is for simplification / list of users can be send according to needs ---</p>
+          <p>--- This button is for simplification / list of users can be sent according to needs ---</p>
         </div>
         <div class="users-want-notifications">
           <form method="POST" action="list-of-winners.php">
-            <button type="submit">Get end of the day Winners</button>
+            <button type="submit">Get Winners' Information</button>
           </form>
-          <p> --- The button is for simplification / list of users can be send according to time and day ---</p>
+          <p> --- This button is for simplification / list of users can be sent according to time and day ---</p>
         </div>
       </div>
       </div>

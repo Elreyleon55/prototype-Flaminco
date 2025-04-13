@@ -140,7 +140,7 @@ button {
 
 .riddle-section {
   text-align: center;
-  background-image: url(../../media/Flaminco-wall-paper.jpg);
+  background-image: url(../../media/coffee-shop-wallpaper.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -152,7 +152,7 @@ button {
 .riddle-section .inside-riddle-section {
   padding: 4rem;
   margin: 5% 12%;
-  background-color: rgba(0, 0, 0, 0.65);
+  background-color: rgba(0, 0, 0, 0.8);
   display: flex;
   flex-direction: column;
   gap: 2rem;
