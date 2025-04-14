@@ -172,6 +172,14 @@ button {
 .riddle-section form .submit-button input:hover {
   cursor: pointer;
 }
+.riddle-section form .riddle-options-list {
+  text-align: center; /* Centers the container */
+  list-style-position: inside; /* Ensures bullets stay aligned */
+}
+.riddle-section form .riddle-options-list li {
+  text-align: left; /* Aligns text inside <li> to the left */
+  display: inline-block; /* Allows text-align to work properly */
+}
 .riddle-section form .riddle-options-list input:hover {
   cursor: pointer;
 }
@@ -180,6 +188,9 @@ button {
 }
 .riddle-section form p, .riddle-section form label, .riddle-section form input {
   font-size: 1.5rem;
+}
+.riddle-section .enter-your-email p {
+  margin-bottom: 1rem;
 }
 
 footer .my-footer-div {

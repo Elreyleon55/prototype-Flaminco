@@ -32,12 +32,12 @@ if ($result->num_rows > 0) {
 
   $emailTemplate = "
    <div>
-   <h1>Newsletter Subscribers</h1>
-        <p>Here is the list of users who signed up for the newsletter:</p>
+   <h1>Todays Winners</h1>
+        <p>Here is a list of today's game winners:</p>
         <table>
             {WINNERS_LIST}
         </table>
-        <p>Total subscribers: {TOTAL_WINNERS}</p>
+        <p>Total Winners: {TOTAL_WINNERS}</p>
         <div class='footer'>
             <p>If you have any questions, feel free to contact us.</p>
         </div>
@@ -82,7 +82,7 @@ if ($result->num_rows > 0) {
     $mail->Port = 587; // TCP port (587 for TLS)
 
     // Recipients
-    $mail->setFrom($config['email_username'], 'Cookie Monster'); // Sender
+    $mail->setFrom($config['email_username'], 'Gamified QR Code Campaign'); // Sender
     $mail->addAddress('benjiroks@gmail.com', 'Recipient Name'); // Recipient
 
     // Content

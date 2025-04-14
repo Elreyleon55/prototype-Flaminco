@@ -58,12 +58,12 @@ if ($usersEmail) {
     $mail->Port = 587; // TCP port (587 for TLS)
 
     // Recipients
-    $mail->setFrom($config['email_username'], 'Cookie Monster'); // Sender
+    $mail->setFrom($config['email_username'], 'Gamified QR Code Campaign'); // Sender
     $mail->addAddress($usersEmail, 'Recipient Name'); // Recipient
 
     // Content
     $mail->isHTML(true); // Set email format to HTML
-    $mail->Subject = 'Congratulations Uprising Cookies';
+    $mail->Subject = 'Congratulations here is your prize';
     $mail->Body = $emailBody;
     $mail->AltBody = 'Hello! This is a test email sent using PHPMailer.'; // Plain text for non-HTML clients
 

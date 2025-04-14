@@ -32,6 +32,12 @@
       }
     }
     .riddle-options-list{
+      text-align: center; /* Centers the container */
+  list-style-position: inside; /* Ensures bullets stay aligned */
+      li{
+        text-align: left; /* Aligns text inside <li> to the left */
+        display: inline-block; /* Allows text-align to work properly */
+      }
       input:hover{
         cursor: pointer;
       }
@@ -46,6 +52,11 @@
       font-size: 1.5rem;
     }
    
+  }
+  .enter-your-email{
+    p{
+      margin-bottom: 1rem;
+    }
   }
 
   display: flex;

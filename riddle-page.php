@@ -9,6 +9,7 @@ if (mysqli_connect_errno() != 0) {
 }
 session_start();
 // 
+// 
 
 
 // Get the current hour in 24-hour format
@@ -176,7 +177,7 @@ if (!isset($_SESSION['riddle_index'])) {
                     </li>
                   </ul>
                 </div>
-                <div>
+                <div class="enter-your-email">
                   <p>Enter your email to receive your prize</p>
                   <input type="text" placeholder="Email" type="gmail" id="gmail" name="users-gmail">
                 </div>
