@@ -9,7 +9,6 @@ if (mysqli_connect_errno() != 0) {
 }
 session_start();
 // 
-// 
 
 
 // Get the current hour in 24-hour format

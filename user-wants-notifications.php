@@ -80,7 +80,7 @@ if ($result->num_rows > 0) {
 
     // Content
     $mail->isHTML(true); // Set email format to HTML
-    $mail->Subject = 'Uprising Subcribers';
+    $mail->Subject = 'Newsletter Subcribers';
     $mail->Body = $emailBody;
     $mail->AltBody = 'Hello! This is a test email sent using PHPMailer.'; // Plain text for non-HTML clients
 
