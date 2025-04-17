@@ -8,7 +8,7 @@ if (mysqli_connect_errno() != 0) {
   // echo "<p>Connection Complete</p>";
 }
 session_start();
-// 
+
 
 
 // Get the current hour in 24-hour format
