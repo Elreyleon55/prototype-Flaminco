@@ -30,7 +30,11 @@ if ($query->num_rows > 0) {
   echo "<p>Can continue and add user to history of users databse</p>";
   $todaysDate = date("Y-m-d");
   $usersEmail = $_SESSION["users_email"];
-  $newsLetterDecision = $_SESSION['user-wants-to-subscribe'];
+  if (isset($_SESSION['user-wants-to-subscribe'])) {
+    $newsLetterDecision = $_SESSION['user-wants-to-subscribe'];
+  } else {
+    $newsLetterDecision = 0;
+  }
   $query = "INSERT INTO history_of_customers (email, date_registration, notify_other_events) VALUES ('$usersEmail', '$todaysDate', '$newsLetterDecision')";
   $mySqli->query($query);
   $affectedRows = $mySqli->affected_rows;
